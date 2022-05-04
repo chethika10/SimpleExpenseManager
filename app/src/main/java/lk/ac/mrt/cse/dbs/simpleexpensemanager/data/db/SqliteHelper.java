@@ -5,17 +5,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 
-public class sqliteHelper extends SQLiteOpenHelper {
-    private static sqliteHelper sqliteHelper;
+public class SqliteHelper extends SQLiteOpenHelper {
+    private static SqliteHelper sqliteHelper;
 
-    public static sqliteHelper getSqliteHelper() {
+    public static SqliteHelper getSqliteHelper() {
         if(sqliteHelper == null){
-            sqliteHelper=new sqliteHelper(null);
+            sqliteHelper=new SqliteHelper(null);
         }
         return sqliteHelper;
     }
 
-    public sqliteHelper(@Nullable Context context) {
+    public SqliteHelper(@Nullable Context context) {
         super(context, "DB", null, 1);
     }
 
