@@ -7,11 +7,10 @@ import android.support.annotation.Nullable;
 
 public class SqliteHelper extends SQLiteOpenHelper {
     private static SqliteHelper sqliteHelper;
-
+    public static void createSqliteHelper(Context context){
+        sqliteHelper=new SqliteHelper(context);
+    }
     public static SqliteHelper getSqliteHelper() {
-        if(sqliteHelper == null){
-            sqliteHelper=new SqliteHelper(null);
-        }
         return sqliteHelper;
     }
 

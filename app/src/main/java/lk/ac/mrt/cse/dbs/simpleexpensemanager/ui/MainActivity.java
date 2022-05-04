@@ -29,6 +29,7 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.R;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.ExpenseManager;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.InMemoryDemoExpenseManager;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.PresistentExpenseManager;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.db.SqliteHelper;
 
 public class MainActivity extends AppCompatActivity {
     private ExpenseManager expenseManager;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         /***  Begin generating dummy data for In-Memory implementation  ***/
         //expenseManager = new InMemoryDemoExpenseManager();
+        SqliteHelper.createSqliteHelper(this);
         expenseManager = new PresistentExpenseManager();
         /*** END ***/
     }
