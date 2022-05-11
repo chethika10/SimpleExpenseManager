@@ -21,10 +21,8 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table if not exists accounts( accountNo varchar(255) primary key not null,bankName varchar(255),accountHolderName varchar(255)," +
-                "balance float(53));");
-        sqLiteDatabase.execSQL("create table if not exists transactions( id int primary key autoincrement ,date varchar(255), expenseType varchar(255), amount float(53), accountNo varchar(255)" +
-                " );");
+        sqLiteDatabase.execSQL("create table if not exists accounts( accountNo varchar(255) primary key not null,bankName varchar(255),accountHolderName varchar(255), balance float(53));");
+        sqLiteDatabase.execSQL("create table if not exists transactions( id int primary key autoincrement ,date varchar(255), expenseType varchar(255), amount float(53), accountNo varchar(255));");
 
 //foreign key (accountNo) references accounts (accountNo)
     }
